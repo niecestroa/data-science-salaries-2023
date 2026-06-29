@@ -9,7 +9,7 @@ from kagglehub import KaggleDatasetAdapter
 file_path = ""
 
 # Load the latest version
-df = kagglehub.load_dataset(
+dss23 = kagglehub.load_dataset(
   KaggleDatasetAdapter.PANDAS,
   "arnabchaki/data-science-salaries-2023",
   file_path,
@@ -19,4 +19,4 @@ df = kagglehub.load_dataset(
   # https://github.com/Kaggle/kagglehub/blob/main/README.md#kaggledatasetadapterpandas
 )
 
-print("First 5 records:", df.head())
+print("First 5 records:", dss23.head())
