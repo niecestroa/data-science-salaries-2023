@@ -6,6 +6,12 @@ This repository contains a structured and reproducible data analysis project bui
 Kaggle — *Data Science Salaries 2023*  
 [https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023](https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023)
 
+# Project Progress
+
+Created: 2026‑06-29  
+Last Edited: 2026‑07‑20  
+Author: Aaron Niecestro  
+
 ## **Project Objectives**
 
 - Analyze salary distributions across roles and seniority levels  
