@@ -30,9 +30,10 @@ Project Lead and Sole Contributor
 
 ## **Project Timeline**
 
-**Date Started:** June 29, 2026  
+**Downloaded Data on:** June 29, 2026  
+**Started Poject on:** July 20, 2026
 **Status:** Ongoing  (Plan to be completed by July 30, 206)
-**Current Phase:** Python workflow development (to be translated into R → SAS)
+**Current Phase:** Python workflow development (to be translated into R then SAS)
 
 ### **Planned Progression**
 1. **Python (Phase 1)** — Build the full baseline workflow  
