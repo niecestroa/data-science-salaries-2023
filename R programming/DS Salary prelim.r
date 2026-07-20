@@ -24,12 +24,20 @@ dss23 <- dss23 %>%
   mutate(
     experience_label = fct_recode(
       experience_level,
-      "Entry" = "EN",
-      "Mid" = "MI",
-      "Senior" = "SE",
+      "Entry"     = "EN",
+      "Mid"       = "MI",
+      "Senior"    = "SE",
       "Executive" = "EX"
+    ),
+    employment_label = fct_recode(
+      employment_type,
+      "Full-Time" = "FT",
+      "Part-Time" = "PT",
+      "Contract"  = "CT",
+      "Freelance" = "FL"
     )
   )
+
 
 head(dss23)
 glimpse(dss23)
