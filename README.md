@@ -31,16 +31,19 @@ Project Lead and Sole Contributor
 ## **Project Timeline**
 
 **Downloaded Data on:** June 29, 2026  
-**Started Poject on:** July 20, 2026
+**Started Poject on:** July 19, 2026
 **Status:** Ongoing  (Plan to be completed by July 30, 206)
-**Current Phase:** Python workflow development (to be translated into R then SAS)
+**Progress:** 
+- Completed the preliminary analysis first starting with Python
+- Converted the preliminary analysis from Python into R and SAS
+**Current Phase:** Review the preliminary analysis and decide which models to use
 
 ### **Planned Progression**
 1. **Python (Phase 1)** — Build the full baseline workflow  
 2. **R (Phase 2)** — Translate Python workflow into tidyverse equivalents  
-3. **SAS (Phase 3)** — Replicate workflow using SAS procedures  
-4. **Cross‑Language Comparison (Phase 4)** — Document differences, strengths, and insights  
-5. **Extensions (Phase 5)** — Modeling, dashboards, external datasets (optional)
+3. **SAS (Phase 3)** — Replicate workflow using SAS procedures
+5. **Cross‑Language Comparison (Phase 4)** — Document differences, strengths, and insights  
+6. **Extensions (Phase 5)** — Modeling, dashboards, external datasets using Python first then convert into R and SAS (when possible) 
 
 # **Project Roadmap**
 
