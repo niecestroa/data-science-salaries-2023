@@ -81,7 +81,7 @@ A clear roadmap helps document the progression of your cross‑language analysis
 - Summarize strengths and limitations of each language  
 - Produce a final report consolidating insights  
 
-### **Phase 5 — Extensions (Optional)**
+### **Phase 5 — Extensions**
 - Build predictive salary models in each language  
 - Add dashboards (Streamlit, Shiny, SAS VA)  
 - Integrate external datasets (e.g., cost of living, job postings)  
