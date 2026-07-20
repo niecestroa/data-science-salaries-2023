@@ -9,17 +9,29 @@ proc import datafile="ds_salaries.csv"
     guessingrows=max;
 run;
 
+/* View first rows */
+proc print data=dss23(obs=5);
+run;
+
+/* Data Cleaning */
 proc format;
     value $expfmt
         'EN' = 'Entry'
         'MI' = 'Mid'
         'SE' = 'Senior'
         'EX' = 'Executive';
+
+    value $empfmt
+        'FT' = 'Full-Time'
+        'PT' = 'Part-Time'
+        'CT' = 'Contract'
+        'FL' = 'Freelance';
 run;
 
 data dss23;
     set dss23;
     format experience_level $expfmt.;
+    format employment_type $empfmt.;
 run;
 
 /* View first rows */
