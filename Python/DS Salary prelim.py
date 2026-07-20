@@ -1,9 +1,13 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jul 20 13:23:26 2026
-
-@author: aniec
-"""
+# =========================================================
+# Created:    2026-06-29
+# Last Edit:  2026-07-20
+# Author:     Aaron Niecestro
+#
+# Description:
+# Preliminary EDA for the Data Science Salaries 2023 dataset.
+# Includes data loading, structure checks, missing values,
+# summary statistics, categorical exploration, and visualization.
+# =========================================================
 
 # -----------------------------
 # 1. Importing Libraries
@@ -50,6 +54,25 @@ dss23.head()
 # ==============================
 # Preliminary Work - Data Summary
 # ==============================
+
+# Experience level mapping (clean labels)
+exp_map = {
+    'EN': 'Entry',
+    'MI': 'Mid',
+    'SE': 'Senior',
+    'EX': 'Executive'
+}
+
+emp_map = {
+    'FT': 'Full-Time',
+    'PT': 'Part-Time',
+    'CT': 'Contract',
+    'FL': 'Freelance'
+}
+
+# Create a labeled version for display only
+dss23['experience_label'] = dss23['experience_level'].map(exp_map)
+dss23['employment_label'] = dss23['employment_type'].map(emp_map)
 
 # -----------------------------
 # 1. Basic structure
@@ -187,6 +210,30 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 sns.set(style="whitegrid", palette="deep")
+
+# ---------------------------------------------------------
+# 0. Histograms and Boxplots
+# ---------------------------------------------------------
+
+# Identify continuous (numeric) columns
+num_cols = dss23.select_dtypes(include=['int64','float64']).columns
+
+# Histograms for all numeric columns
+for col in num_cols:
+    plt.figure(figsize=(10,6))
+    sns.histplot(dss23[col], kde=True, bins=40)
+    plt.title(f"Histogram of {col}")
+    plt.xlabel(col)
+    plt.ylabel("Count")
+    plt.show()
+
+# Boxplots for all numeric columns
+for col in num_cols:
+    plt.figure(figsize=(10,6))
+    sns.boxplot(x=dss23[col])
+    plt.title(f"Boxplot of {col}")
+    plt.xlabel(col)
+    plt.show()
 
 # ---------------------------------------------------------
 # 1. Salary Distribution (Histogram + KDE)
