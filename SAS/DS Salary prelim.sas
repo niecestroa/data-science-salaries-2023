@@ -9,6 +9,19 @@ proc import datafile="ds_salaries.csv"
     guessingrows=max;
 run;
 
+proc format;
+    value $expfmt
+        'EN' = 'Entry'
+        'MI' = 'Mid'
+        'SE' = 'Senior'
+        'EX' = 'Executive';
+run;
+
+data dss23;
+    set dss23;
+    format experience_level $expfmt.;
+run;
+
 /* View first rows */
 proc print data=dss23(obs=5);
 run;
@@ -99,6 +112,44 @@ run;
 /* =========================================================
    10. Visualization (PROC SGPLOT)
    ========================================================= */
+
+/* 0. All Continuos Variable  Histograms and Boxplots */
+
+/* Identify numeric variables */
+proc contents data=dss23 out=meta(keep=name type);
+run;
+
+data numvars;
+    set meta;
+    if type = 1; /* 1 = numeric */
+run;
+
+/* Macro to loop through numeric variables */
+%macro plots;
+    proc sql noprint;
+        select name into :numlist separated by ' ' from numvars;
+    quit;
+
+    %let count = %sysfunc(countw(&numlist));
+
+    %do i = 1 %to &count;
+        %let var = %scan(&numlist, &i);
+
+        title "Histogram of &var";
+        proc sgplot data=dss23;
+            histogram &var / nbins=40;
+            density &var;
+        run;
+
+        title "Boxplot of &var";
+        proc sgplot data=dss23;
+            vbox &var;
+        run;
+
+    %end;
+%mend;
+
+%plots;
 
 /* 1. Salary Distribution */
 title "Salary Distribution";
