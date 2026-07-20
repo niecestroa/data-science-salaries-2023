@@ -119,6 +119,29 @@ print(cor_matrix)
 # 12. Visualization (ggplot2)
 # =========================================================
 
+# 0. Variable Histograms and Boxplots
+# Identify numeric columns
+num_cols <- dss23 %>% select(where(is.numeric)) %>% names()
+
+# Histograms
+for (col in num_cols) {
+  print(
+    ggplot(dss23, aes(.data[[col]])) +
+      geom_histogram(bins = 40, fill = "steelblue") +
+      geom_density(alpha = 0.3, fill = "lightblue") +
+      labs(title = paste("Histogram of", col), x = col, y = "Count")
+  )
+}
+
+# Boxplots
+for (col in num_cols) {
+  print(
+    ggplot(dss23, aes(x = .data[[col]])) +
+      geom_boxplot(fill = "lightblue") +
+      labs(title = paste("Boxplot of", col), x = col)
+  )
+}
+
 # 1. Salary Distribution
 ggplot(dss23, aes(salary_in_usd)) +
   geom_histogram(bins = 40, fill = "steelblue") +
