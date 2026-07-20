@@ -6,7 +6,7 @@ Created on Mon Jul 20 13:23:26 2026
 """
 
 # -----------------------------
-# 2. Importing Libraries
+# 1. Importing Libraries
 # -----------------------------
 
 # Loading the Data directly from Kaggle
@@ -46,6 +46,10 @@ pd.set_option("display.width", None)
 pd.set_option("display.max_colwidth", None)
 
 dss23.head()
+
+# ==============================
+# Preliminary Work - Data Summary
+# ==============================
 
 # -----------------------------
 # 1. Basic structure
