@@ -1,4 +1,15 @@
 # =========================================================
+# Created:    2026-06-29
+# Last Edit:  2026-07-20
+# Author:     Aaron Niecestro
+#
+# Description:
+# Preliminary EDA for the Data Science Salaries 2023 dataset.
+# Includes data loading, structure checks, missing values,
+# summary statistics, categorical exploration, and visualization.
+# =========================================================
+
+# =========================================================
 # 1. Load Libraries
 # =========================================================
 library(tidyverse)
