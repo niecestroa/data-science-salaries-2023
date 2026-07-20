@@ -1,8 +1,8 @@
-# **README — Modeling**
+# README — Regression Models
 
-## Created: 2026‑07‑20  
-## Last Edited: 2026‑07‑20  
-## Author: Aaron Niecestro  
+Created: 2026‑07‑20  
+Last Edited: 2026‑07‑20  
+Author: Aaron Niecestro 
 
 ---
 
